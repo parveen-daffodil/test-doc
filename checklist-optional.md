@@ -161,7 +161,7 @@ https://github.com/Codepact/topics/blob/rules/cancel_convenience.json
 
 https://github.com/Codepact/topics/blob/rules/indemnity.json
 
-https://github.com/Codepact/topics/blob/optional-widget-checklist/limitation.json
+https://github.com/parveen-daffodil/test-doc/blob/master/optional-widget-cheks.json
 
 https://github.com/Codepact/topics/blob/rules/ip_services.json
 
