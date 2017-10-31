@@ -1,0 +1,448 @@
+{
+    "advice risks": {
+        "type": "optional",
+        "guidance": "[[risk advice]]",
+        "text": "{{advice risk list}}\n",
+        "listen": [{
+            "key": "adviceRisks",
+            "value": "true",
+            "action": "select()"
+        }, {
+            "key": "adviceRisks",
+            "value": "false",
+            "action": "remove()"
+        }]
+    },
+    "people property risks": {
+        "type": "optional",
+        "guidance": "[[risk property]]",
+        "text": "{{people property risk list}}\n",
+        "listen": [{
+            "key": "peoplePropertyRisks",
+            "value": "true",
+            "action": "select()"
+        }, {
+            "key": "peoplePropertyRisks",
+            "value": "false",
+            "action": "remove()"
+        }],
+        "checklist": {
+            "item": "Make sure you have public liability in place",
+            "guidance": "This is the guidance."
+        }
+    },
+    "agreement legal risks": {
+        "type": "optional",
+        "guidance": "Will this document deal with legal risks more generally? If you're in doubt about this, say 'yes'.  If we're using a legal document it's safe to say that legal document risks are part of the deal.",
+        "text": "{{agreement risk list}}\n",
+        "listen": [{
+            "key": "agreementRisks",
+            "value": "true",
+            "action": "select()"
+        }, {
+            "key": "agreementRisks",
+            "value": "false",
+            "action": "remove()"
+        }]
+    },
+    "software and network risks": {
+        "type": "optional",
+        "text": "{{software and network risk list}}\n",
+        "guidance": "[[risk software]]",
+        "listen": [{
+            "key": "softwareRisks",
+            "value": "true",
+            "action": "select()"
+        }, {
+            "key": "softwareRisks",
+            "value": "false",
+            "action": "remove()"
+        }]
+    },
+    "risks from data": {
+        "type": "optional",
+        "text": "{{data risk list}}\n",
+        "guidance": "[[risk data]]",
+        "listen": [{
+            "key": "dataRisks",
+            "value": "true",
+            "action": "select()"
+        }, {
+            "key": "dataRisks",
+            "value": "false",
+            "action": "remove()"
+        }]
+    },
+    "intellectual property risks": {
+        "type": "optional",
+        "guidance": "[[risk ip]]",
+        "text": "{{intellectual property risk list}}\n",
+        "listen": [{
+            "key": "ipRisks",
+            "value": "true",
+            "action": "select()"
+        }, {
+            "key": "ipRisks",
+            "value": "false",
+            "action": "remove()"
+        }]
+    },
+
+    "advice risk list": {
+        "type": "list",
+        "listen": {
+            "key": "adviceRisks",
+            "value": "true",
+            "action": "select([1,2,3])"
+        },
+        "guidance": "Select the risks that apply.",
+        "pre": "**Risks from advice**, including:\n",
+        "text": [{
+            "val": "- reliance on advice or opinions in whatever form"
+        }, {
+            "val": "- incorrect technical advice or data"
+        }, {
+            "val": "- failure to provide correct information"
+        }],
+        "post": ".",
+        "penultimate": "; and\n",
+        "connector": ";\n"
+    },
+
+    "people property risk list": {
+        "type": "list",
+        "listen": {
+            "key": "peoplePropertyRisks",
+            "value": "true",
+            "action": "select([1,2])"
+        },
+        "guidance": "Select the risks that apply.",
+        "pre": "**Risks from people and property**, including:\n",
+        "text": [{
+            "summary": "",
+            "val": "- any death or injury"
+        }, {
+            "summary": "",
+            "val": "- any property damage"
+        }],
+        "post": ".",
+        "penultimate": "; and\n",
+        "connector": ";\n"
+    },
+
+    "agreement risk list": {
+        "type": "list",
+        "listen": {
+            "key": "agreementRisks",
+            "value": "true",
+            "action": "select([1,2,3,4,5])"
+        },
+        "guidance": "Select the risks that apply.",
+        "pre": "**Risks from the Agreement**, including:\n",
+        "text": [{
+            "summary": "",
+            "val": "- negligence connected with the Agreement and its subject matter"
+        }, {
+            "val": "- third party reliance on the subject matter of the agreement"
+        }, {
+            "val": "- any act or omission connected with the Agreement"
+        }, {
+            "val": "- any delay connected with the Agreement"
+        }, {
+            "val": "- breaches of the Agreement"
+        }, {
+            "val": "- the termination of the Agreement"
+        }],
+        "post": ".",
+        "penultimate": "; and\n",
+        "connector": ";\n"
+    },
+
+    "software and network risk list": {
+        "type": "list",
+        "listen": {
+            "key": "softwareRisks",
+            "value": "true",
+            "action": "select([1,2,3,4,5,6])"
+        },
+        "guidance": "Select the risks that apply.",
+        "pre": "**Risks from software and network**, including:\n",
+        "text": [{
+            "val": "- digital security issues like software vulnerabilities"
+        }, {
+            "val": "- software in a testing phase like (or analogous to) beta and alpha software"
+        }, {
+            "val": "- software or network that's inaccessible for any reason"
+        }, {
+            "val": "- faulty technical data created by software"
+        }, {
+            "val": "- the use of software for unlawful activity"
+        }, {
+            "val": "- failure of any software, hardware or network components provided by a third party"
+        }],
+        "post": ".",
+        "penultimate": "; and\n",
+        "connector": ";\n"
+    },
+
+    "data risk list": {
+        "type": "list",
+        "listen": {
+            "key": "dataRisks",
+            "value": "true",
+            "action": "select([1,2,3,4,5])"
+        },
+        "guidance": "Select the risks that apply.",
+        "pre": "**Risks from data**, including:\n",
+        "text": [{
+            "val": "- breach of privacy or data protection law"
+        }, {
+            "val": "- digital security issues like malware"
+        }, {
+            "val": "- breach of any law in connection with spam"
+        }, {
+            "val": "- the storage of any third party data"
+        }, {
+            "val": "- corrupted or lost data"
+        }, {
+            "val": "- a third party pursuing a right conferred by privacy or data protection law"
+        }],
+        "post": ".",
+        "penultimate": "; and\n",
+        "connector": ";\n"
+    },
+
+    "intellectual property risk list": {
+        "type": "list",
+        "listen": {
+            "key": "ipRisks",
+            "value": "true",
+            "action": "select([1,2])"
+        },
+        "guidance": "Select the risks that apply.",
+        "pre": "**Risks from intellectual property**, including:\n",
+        "text": [{
+            "summary": "",
+            "val": "- risks relating to infringement of third party intellectual property"
+        }, {
+            "summary": "",
+            "val": "- any third party claim or legal action for intellectual property infringement"
+        }],
+        "post": ".",
+        "penultimate": "; and\n",
+        "connector": ";\n"
+    },
+
+    "exceptions to limits": {
+        "type": "optional",
+        "guidance": "Are there circumstances where this claim limit does not apply?  If you answer yes, it means you want a different claim limit to apply to certain types of risk.",
+        "text": ", **except for** {{limit exception type}}",
+        "listen": [{
+                "key": "advantage",
+                "value": "strongAdvantage1",
+                "action": "remove()"
+            }, {
+                "key": "advantage",
+                "value": "standardAdvantage1",
+                "action": "remove()"
+            }, {
+                "key": "advantage",
+                "value": "evenAdvantage",
+                "action": "remove()"
+            }, {
+                "key": "advantage",
+                "value": "standardAdvantage2",
+                "action": "remove()"
+            }, {
+                "key": "advantage",
+                "value": "strongAdvantage2",
+                "action": "remove()"
+            }]
+    },
+
+    "limitation subject": {
+        "type": "choice",
+        "listen": [{
+                "key": "documentSubject",
+                "value": "servicesSubject",
+                "action": "select(2)"
+            }, {
+                "key": "documentSubject",
+                "value": "nonDisclosureSubject",
+                "action": "select(1)"
+            }, {
+                "key": "physicalGoodsSale",
+                "value": "true",
+                "action": "select(3)"
+            }],
+        "guidance": "What will the limitation of liability apply to?",
+        "text": [{
+            "summary": "Agreement only",
+            "val": "Agreement"
+        }, {
+            "summary": "Agreement and services provided",
+            "val": "Agreement and Services"
+        },{
+            "summary": "Agreement, goods and services provided",
+            "val": "Agreement, Services and Products"
+        } ]
+    },
+
+    "limit exception type": {
+        "type": "choice",
+        "guidance": "What exception applies to the claim limit above?",
+        "text": [{
+            "summary": "The negligence of {{party 1}}",
+            "val": "claims caused by the negligence of {{party 1}} in relation to the Services, where {{exception limit}}"
+        }, {
+            "summary": "Work of a certain type by {{party 1}}.",
+            "val": "work by {{party 1}} connected with {{work type}}, where {{exception limit}}"
+        }, {
+            "summary": "Another type of exception not listed above",
+            "val": "{{exception description blank}}, where {{exception limit}}"
+        }]
+    },
+
+    "exception description blank": {
+        "type": "blank",
+        "guidance": "describe the exception to the claim limit using wording that fits into the sentence above.",
+        "text": ""
+    },
+
+    "work type": {
+        "type": "blank",
+        "guidance": "Enter the type of work that there is an exception to the claim limit for.",
+        "text": "support and maintenance"
+    },
+
+    "exception limit": {
+        "type": "choice",
+        "guidance": "We've created an exception to the claim limit, but it is a good idea to specify a claim limit for the exception.  Choose the claim limit for the exception.",
+        "text": [{
+            "summary": "Limit liability for the exception to a certain amount.",
+            "val": "{{party 2}}'s claim is Limited To The Amount {{limit amount}}"
+        }, {
+            "summary": "Limit liability for the exception to direct loss",
+            "val": "{{party 2}}'s claim is Limited To Direct Loss Claims"
+        }]
+    },
+
+    "unlimited risks": {
+        "type": "blank",
+        "guidance": "Enter the risks you want {{party 1}} to be liable for",
+        "text": ""
+    },
+
+    "limit amount": {
+        "type": "choice",
+        "guidance": "Choose how to describe the limiting amount.",
+        "text": [{
+            "summary": "A specific dollar like \"$1,000,000\".",
+            "val": "${{amount limit}}",
+            "jurisdiction": "Australia"
+        }, {
+            "summary": "A specific amount like \"£1,000,000\".",
+            "val": "£{{amount limit}}",
+            "jurisdiction": "England Wales"
+        }, {
+            "summary": "An amount described by referring to the cost of the Services like \"double the cost of the services\".",
+            "val": "an amount equal to {{time scope}}"
+        }, {
+            "summary": "The amount {{party 1}}'s insurer pays out.",
+            "val": "the amount paid by the insurer of {{party 1}} in relation to a claim by {{party 2}}"
+        }]
+    },
+
+    "time scope": {
+        "type": "choice",
+        "guidance": "When you're using the value of the contract as a limit, you can assess it by the entire length of the agreement, or a limited period into the past - the second option will usually make the limit amount smaller.",
+        "text": [{
+            "summary": "Calculating by reference to the money paid under the full period of Agreement.",
+            "val": "{{total amount calculation}} the money paid to {{party 2}} under the entire Agreement"
+        }, {
+            "summary": "Calculating by reference to the money paid under a period of the Agreement like \"the last six months of the Agreement\".",
+            "val": "{{time amount calculation}}"
+        }]
+    },
+
+    "time amount calculation": {
+        "type": "choice",
+        "guidance": "What period of the Agreement is applicable?",
+        "text": [{
+            "summary": "Money paid over a period of months",
+            "val": "the money paid to {{party 2}} for the last {{time limit scope month}} month{{plural}} of the Agreement"
+        }, {
+            "summary": "Money paid over a period of years",
+            "val": "the money paid to {{party 2}} for the last {{time limit scope year}} year{{plural}} of the Agreement"
+        }]
+    },
+
+    "time limit scope month": {
+        "type": "blank",
+        "guidance": "Type in the number of months",
+        "text": "6"
+    },
+
+    "time limit scope year": {
+        "type": "blank",
+        "guidance": "Type in the number of years",
+        "text": "1"
+    },
+
+    "total amount calculation": {
+        "type": "choice",
+        "guidance": "There are different ways to calculate a limit by reference to the Services.",
+        "text": [{
+            "summary": "**Percentage** of the amount paid under the Agreement. For example, \"an amount no more than 50% of the money paid under the Agreement\".",
+            "val": "{{percentage amount}}%"
+        }, {
+            "summary": "**Multiple** of an amount paid under the Agreement like \"double the amount paid by {{party 2}} under the Agreement\"",
+            "val": "{{limit multiple}}"
+        }]
+    },
+
+    "percentage amount": {
+        "type": "blank",
+        "guidance": "Enter the number for the percentage.",
+        "text": "50"
+    },
+
+    "limit multiple": {
+        "type": "choice",
+        "guidance": "Choose the limit amount multiple for the total paid under the Agreement.",
+        "text": [{
+            "summary": "**1.5x** the total paid under the Agreement",
+            "val": "1.5 multiplied by"
+        }, {
+            "summary": "**Double** the total paid under the Agreement",
+            "val": "double"
+        }, {
+            "summary": "**2.5x** the total paid under the Agreement",
+            "val": "2.5 multiplied by"
+        }, {
+            "summary": "**Triple** the total paid under the Agreement",
+            "val": "triple"
+        }, {
+            "summary": "**3.5x** the total paid under the Agreement",
+            "val": "3.5 multiplied by"
+        }, {
+            "summary": "**Quadruple** the total paid under the Agreement",
+            "val": "quadruple"
+        }, {
+            "summary": "Another value",
+            "val": "{{another multiple}} multiplied by"
+        }]
+    },
+
+    "another multiple": {
+        "type": "blank",
+        "guidance": "Enter your own multiple.",
+        "text": "[*] multiplied by"
+    },
+
+    "amount limit": {
+        "type": "blank",
+        "guidance": "Enter a number to set the amount that quantifies the limit.",
+        "text": "1,000,000"
+    }
+}
